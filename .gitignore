@@ -1,0 +1,12 @@
+HELP.md
+target/
+.idea
+*.iws
+*.iml
+*.ipr
+ibm/compiled
+ibm/decompiled
+ibm/wamt/compiled
+ibm/wamt/decompiled
+temp
+*.html

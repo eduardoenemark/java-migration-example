@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+********************************************************************************
+* Licensed Materials - Property of IBM                                         *
+* (C) Copyright IBM Corp. 2015, 2023.  All Rights Reserved.                    *
+*                                                                              *
+* US Government Users Restricted Rights - Use, duplication or disclosure       *
+* restricted by GSA ADP Schedule Contract with IBM Corp.                       *
+********************************************************************************
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://websphere.ibm.com/xml/ns/wamt/binary-scanner-rule" 
+	elementFormDefault="qualified" xmlns:wamt="http://websphere.ibm.com/xml/ns/wamt/binary-scanner-rule" version="1.0">
+	
+	<include schemaLocation="rule-common_1_0.xsd"/>
+
+    <element name="rule" type="wamt:ruleType"></element>
+    
+    <complexType name="ruleType">
+    	<sequence>
+    		<choice minOccurs="1" maxOccurs="1">
+    			<element name="detectAttribute" type="wamt:detectAttribute" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectElement" type="wamt:detectElement" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectMultipleCriteria" type="wamt:detectMultipleCriteria" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="or" type="wamt:or" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="and" type="wamt:and" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectDTD" type="wamt:detectDTD" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectPackage" type="wamt:detectPackage" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectConstructorParameter" type="wamt:detectConstructorParameter" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectClass" type="wamt:detectClass" minOccurs="0" maxOccurs="1">
+    			</element>
+    			<element name="detectManifestAttribute" type="wamt:detectManifestAttribute" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectEnumOrField" type="wamt:detectEnumOrField" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectFile" type="wamt:detectFile" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectJspTaglib" type="wamt:detectJspTaglib" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectProperty" type="wamt:detectProperty" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectStringLiteral" type="wamt:detectStringLiteral" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectMethod" type="wamt:detectMethod" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectMethodParameter" type="wamt:detectMethodParameter" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectAnnotation" type="wamt:detectAnnotation" maxOccurs="1" minOccurs="0">
+    			</element>
+    			<element name="detectConstructor" type="wamt:detectConstructor" minOccurs="0" maxOccurs="1"></element>
+    			<element name="detectHtmlActionTag" type="wamt:detectHtmlActionTag" minOccurs="0" maxOccurs="1"></element>
+    		</choice>
+    	</sequence>
+    	<attribute name="id" use="required">
+    		<simpleType>
+    			<restriction base="string">
+		            <pattern value="[^=]+" />
+		        </restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="description" type="string" use="required"></attribute>
+    	<attribute name="recipes" type="string" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="detectMultipleCriteria">	
+    	<sequence minOccurs="1" maxOccurs="unbounded">	
+    		<element name="detectAttribute"	type="wamt:detectAttribute"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectElement"	type="wamt:detectElement"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectDTD" type="wamt:detectDTD" minOccurs="0"	
+    			maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectPackage" type="wamt:detectPackage"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectConstructorParameter"	type="wamt:detectConstructorParameter"
+    				minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectClass" type="wamt:detectClass"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectAnnotation"	type="wamt:detectAnnotation"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectManifestAttribute"	type="wamt:detectManifestAttribute" maxOccurs="unbounded"	
+    			minOccurs="0">	
+    		</element>	
+    		<element name="detectEnumOrField" type="wamt:detectEnumOrField"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectFile" 	type="wamt:detectFile"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectJspTaglib" type="wamt:detectJspTaglib"	
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectProperty" type="wamt:detectProperty"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectStringLiteral"	type="wamt:detectStringLiteral" maxOccurs="unbounded"	
+    			minOccurs="0">	
+    		</element>	
+    		<element name="detectMethod" type="wamt:detectMethod"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectMethodParameter" type="wamt:detectMethodParameter"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectConstructor" type="wamt:detectConstructor" minOccurs="0" maxOccurs="unbounded"></element>	
+    		<element name="detectHtmlActionTag" type="wamt:detectHtmlActionTag" minOccurs="0" maxOccurs="1"></element>	
+    	</sequence>	
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>	
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>	
+    </complexType>
+
+</schema>

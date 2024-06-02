@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+********************************************************************************
+* Licensed Materials - Property of IBM                                         *
+* (C) Copyright IBM Corp. 2021, 2023.  All Rights Reserved.                    *
+*                                                                              *
+* US Government Users Restricted Rights - Use, duplication or disclosure       *
+* restricted by GSA ADP Schedule Contract with IBM Corp.                       *
+********************************************************************************
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://websphere.ibm.com/xml/ns/wamt/binary-scanner-rule" 
+xmlns:common="http://websphere.ibm.com/xml/ns/wamt/binary-scanner-rule"
+	elementFormDefault="qualified" version="1.0">
+	
+	<complexType name="or">	
+    	<sequence minOccurs="1" maxOccurs="unbounded">	
+    		<element name="detectAttribute"	type="common:detectAttribute"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectElement"	type="common:detectElement"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectDTD" type="common:detectDTD" minOccurs="0"	
+    			maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectPackage" type="common:detectPackage"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectConstructorParameter"	type="common:detectConstructorParameter"
+    				minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectClass" type="common:detectClass"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectAnnotation"	type="common:detectAnnotation"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectManifestAttribute"	type="common:detectManifestAttribute" maxOccurs="unbounded"	
+    			minOccurs="0">	
+    		</element>	
+    		<element name="detectEnumOrField" type="common:detectEnumOrField"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectFile" 	type="common:detectFile"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectJspTaglib" type="common:detectJspTaglib"	
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectProperty" type="common:detectProperty"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectStringLiteral"	type="common:detectStringLiteral" maxOccurs="unbounded"	
+    			minOccurs="0">	
+    		</element>	
+    		<element name="detectMethod" type="common:detectMethod"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectMethodParameter" type="common:detectMethodParameter"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectConstructor" type="common:detectConstructor" minOccurs="0" maxOccurs="unbounded"></element>	
+    		<element name="detectHtmlActionTag" type="common:detectHtmlActionTag" minOccurs="0" maxOccurs="1"></element>	
+    		<element name="and" type="common:and" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>	
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>	
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="and">	
+    	<sequence minOccurs="1" maxOccurs="unbounded">	
+    		<element name="detectAttribute"	type="common:detectAttribute"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectElement"	type="common:detectElement"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectDTD" type="common:detectDTD" minOccurs="0"	
+    			maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectPackage" type="common:detectPackage"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectConstructorParameter"	type="common:detectConstructorParameter"
+    				minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectClass" type="common:detectClass"
+    			minOccurs="0" maxOccurs="unbounded">	
+    		</element>	
+    		<element name="detectAnnotation"	type="common:detectAnnotation"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectManifestAttribute"	type="common:detectManifestAttribute" maxOccurs="unbounded"	
+    			minOccurs="0">	
+    		</element>	
+    		<element name="detectEnumOrField" type="common:detectEnumOrField"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectFile" 	type="common:detectFile"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectJspTaglib" type="common:detectJspTaglib"	
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectProperty" type="common:detectProperty"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectStringLiteral"	type="common:detectStringLiteral" maxOccurs="unbounded"	
+    			minOccurs="0">	
+    		</element>	
+    		<element name="detectMethod" type="common:detectMethod"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectMethodParameter" type="common:detectMethodParameter"
+    			maxOccurs="unbounded" minOccurs="0">	
+    		</element>	
+    		<element name="detectConstructor" type="common:detectConstructor" minOccurs="0" maxOccurs="unbounded"></element>	
+    		<element name="detectHtmlActionTag" type="common:detectHtmlActionTag" minOccurs="0" maxOccurs="1"></element>		
+    		<element name="or" type="common:or" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>	
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>	
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    </complexType>
+	
+    <complexType name="detectAttribute">
+    	<sequence>
+    		<element name="xmlFile" type="common:xmlFile" 
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="tags" type="string" use="optional"></attribute>
+    	<attribute name="attributeName" type="string" use="required"></attribute>
+    	<attribute name="xmlFileType" type="string" use="optional"></attribute>
+    	<attribute name="attributeValue" type="string" use="optional">
+		<annotation>
+    			<documentation>This is a regular expression.</documentation>
+    		</annotation></attribute>
+    	<attribute name="validateDocumentNamespace" type="string"
+    		use="optional">
+    	</attribute>
+    	<attribute name="attributeNamespace" type="string" use="optional"></attribute>
+    	<attribute name="documentNamespace" type="string" use="optional"></attribute>
+    	<attribute name="namespace" type="string" use="optional"></attribute>
+    	<attribute name="flagIfAttributeMissing" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="detectElement">
+    	<sequence>
+    		<element name="xmlFile"  type="common:xmlFile" 
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="tags" type="string" use="optional"></attribute>
+    	<attribute name="missingChildElement" type="string" use="optional"></attribute>
+    	<attribute name="missingChildElementValue" type="string" use="optional"></attribute>
+    	<attribute name="missingChildElementAttribute" type="string" use="optional"></attribute>
+    	<attribute name="missingChildElementAttributeValue" type="string" use="optional"></attribute>
+    	<attribute name="value" type="string" use="optional">
+    		<annotation>
+    			<documentation>This is a regular expression.</documentation>
+    		</annotation></attribute>
+    	<attribute name="parentTags" type="string" use="optional"></attribute>
+    	<attribute name="validateDocumentNamespaceIfPresent"
+    		type="string" use="optional">
+    	</attribute>
+    	<attribute name="flagDuplicate" type="boolean" use="optional"></attribute>
+    	<attribute name="namespace" type="string" use="optional"></attribute>
+    	<attribute name="documentNamespace" type="string"
+    		use="optional">
+    	</attribute>
+    	<attribute name="flagRootNode" type="boolean" use="optional"></attribute>
+    	<attribute name="flagNoRootNode" type="boolean" use="optional"></attribute>
+    	<attribute name="flagNotEmpty" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="xmlFile">
+    	<attribute name="pattern" type="string" use="required">
+    		<annotation>
+    			<documentation>This is a regular expression.</documentation>
+    		</annotation></attribute>
+    </complexType>
+    
+    <complexType name="detectHtmlActionTag">
+    	<sequence minOccurs="1" maxOccurs="unbounded">
+    		<element name="htmlAction" type="common:htmlAction" minOccurs="0" maxOccurs="unbounded"></element>
+    		<element name="taglibUri" type="common:taglibUri" minOccurs="0" maxOccurs="unbounded"></element>
+    	</sequence>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="htmlAction">
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+    
+    <complexType name="taglibUri">
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+    
+    <complexType name="detectDTD">
+    	<sequence>
+    		<element name="xmlFile" type="common:xmlFile" minOccurs="1"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    	<attribute name="dtdName" type="string" use="required"></attribute>
+    	<attribute name="rootTag" type="string" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagNullDocTypeWhenNoVersionAttrExists" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="detectPackage">
+    	<attribute name="names" type="string" use="required"></attribute>
+    	<attribute name="excludeReferences" type="string" use="optional"></attribute>
+    	<attribute name="excludeClassNames" type="string" use="optional"></attribute>
+    	<attribute name="excludePackageNames" type="string" use="optional"></attribute>
+    	<attribute name="providedPackages" type="string" use="optional"></attribute>
+    	<attribute name="detectProvidedAndUsed" type="boolean" use="optional"></attribute>
+    	<attribute name="useAppProvidedLibraries" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="validateBundleImports" type="boolean" use="optional"></attribute>
+    	<attribute name="skipScanForUsage" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="detectConstructorParameter">
+    	<sequence>
+    		<element name="argument" type="common:argument" 
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="arguments" type="string" use="required"></attribute>
+    	<attribute name="owners" type="string" use="required"></attribute>
+        <attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+	<complexType name="detectClass">
+		<sequence>
+			<choice minOccurs="0" maxOccurs="1">
+				<element name="implementsMethod" 
+				 	type="common:implementsMethod" maxOccurs="unbounded" minOccurs="0">
+    			</element>
+    			<element name="missingMethod" 
+    				 type="common:missingMethod" maxOccurs="unbounded" minOccurs="0">
+    			</element>
+			</choice>
+		</sequence>
+		<attribute name="names" type="string" use="optional"></attribute>
+		<attribute name="extends" type="string" use="optional"></attribute>
+		<attribute name="implements" type="string" use="optional"></attribute>
+		<attribute name="useAppProvidedLibraries" type="boolean" use="optional"></attribute>
+		<attribute name="skipScanForUsage" type="boolean" use="optional"></attribute>
+		<attribute name="classNamePattern" type="string" use="optional">
+		</attribute>
+		<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+		<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+	</complexType>
+
+
+    <complexType name="missingMethod">
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="implementsMethod">
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="arguments" type="string" use="optional"></attribute>
+    	<attribute name="accessFlag" use="optional">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="public"></enumeration>
+    				<enumeration value="non-public"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="detectAnnotation">
+    	<sequence>
+    		<element name="field" type="common:field" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		<element name="location" type="common:location" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="accessFlag" use="optional">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="public"></enumeration>
+    				<enumeration value="non-public"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="defaultValue" type="string" use="optional"></attribute>
+    	<attribute name="type" type="string" use="optional"></attribute>
+    	<attribute name="attributeName" type="string" use="optional"></attribute>
+    	<attribute name="missingAttribute" type="string"
+    		use="optional">
+    	</attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="field">
+    	<attribute name="value" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="location">
+    	<attribute name="type" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="class"></enumeration>
+    				<enumeration value="interface"></enumeration>
+    				<enumeration value="method"></enumeration>
+    				<enumeration value="field"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="class" type="string" use="optional"></attribute>
+    	<attribute name="defaultName" type="string" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="detectManifestAttribute">
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="archiveName" type="string" use="optional"></attribute>
+    	<attribute name="value" type="string" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="detectEnumOrField">
+    	<attribute name="type" type="string" use="required"></attribute>
+    	<attribute name="value" type="string" use="required"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="detectFile">
+    	<sequence>
+    		<element name="file" type="common:file" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="flagMissingFile" type="boolean"
+    		use="optional">
+    	</attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="file">
+    	<attribute name="pattern" type="string" use="required"></attribute>
+    	<attribute name="fileName" type="string" use="optional"></attribute>
+    	<attribute name="folder" type="string" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="detectJspTaglib">
+    	<sequence>
+    		<element name="taglib" type="common:taglib" 
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="taglib">
+    	<attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="detectProperty">
+    	<sequence>
+    		<element name="property" type="common:property" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    	<attribute name="file" type="string" use="required"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="property">
+    	<attribute name="key" type="string" use="optional"></attribute>
+    	<attribute name="value" type="string" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="detectStringLiteral">
+    	<sequence>
+    		<element name="literal" type="common:literal" 
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+    
+    <complexType name="literal">
+    	<attribute name="value" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="detectMethod">
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="owners" type="string" use="required"></attribute>
+    	<attribute name="arguments" type="string" use="optional"></attribute>
+    	<attribute name="excludePackageNames" type="string" use="optional"></attribute>
+    	<attribute name="returnType" type="string" use="optional"></attribute>
+    	<attribute name="flagCatchExceptions" type="string" use="optional"></attribute>
+    	<attribute name="flagUnhandledExceptions" type="string" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="detectMethodParameter">
+    	<sequence>
+    		<element name="argument" type="common:argument"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string" use="required"></attribute>
+    	<attribute name="owners" type="string" use="required"></attribute>
+    	<attribute name="arguments" type="string" use="optional"></attribute>
+  		<attribute name="returnType" type="string" use="optional"></attribute>
+    	<attribute name="flagCatchExceptions" type="string" use="optional"></attribute>
+    	<attribute name="flagUnhandledExceptions" type="string" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    	
+    </complexType>
+
+    <complexType name="argument">
+    		<attribute name="position" type="int" use="required"></attribute>
+    		<attribute name="flagVariable" type="boolean" use="optional"></attribute>
+    		<attribute name="flagStringLiteral" type="string" use="optional"></attribute>
+    		<attribute name="flagVariableValue" type="string" use="optional"></attribute>
+    		<attribute name="flagType" type="string" use="optional"></attribute>
+    		<attribute name="flagTypeLiteral" type="boolean" use="optional"></attribute>
+    </complexType>
+
+
+    <complexType name="detectConstructor">
+    	<attribute name="owners" type="string" use="required"></attribute>
+    	<attribute name="flagCatchExceptions" type="string" use="optional"></attribute>
+    	<attribute name="arguments" type="string" use="optional"></attribute>
+    	<attribute name="flagOnce" type="boolean" use="optional"></attribute>
+    	<attribute name="flagOncePerFile" type="boolean" use="optional"></attribute>
+    	<attribute name="hideResult" type="boolean" use="optional"></attribute>
+    </complexType>
+</schema>

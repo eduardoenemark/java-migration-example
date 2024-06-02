@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+********************************************************************************
+* Licensed Materials - Property of IBM                                         *
+* (C) Copyright IBM Corp. 2021.  All Rights Reserved.                          *
+*                                                                              *
+* US Government Users Restricted Rights - Use, duplication or disclosure       *
+* restricted by GSA ADP Schedule Contract with IBM Corp.                       *
+********************************************************************************
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://websphere.ibm.com/xml/ns/wamt/binary-scanner-rule-list" 
+	elementFormDefault="qualified" xmlns:wamt="http://websphere.ibm.com/xml/ns/wamt/binary-scanner-rule-list" version="1.0">
+
+    <element name="rules" type="wamt:rulesType"></element>
+    
+    <complexType name="rulesType">
+    	<sequence>
+    		<choice minOccurs="1" maxOccurs="unbounded">
+    			<element name="rule" type="wamt:rule" minOccurs="0" maxOccurs="1"></element>
+    		</choice>
+    	</sequence>
+    	<attribute name="mainCategory" type="string" use="optional" default="Unknown Category"></attribute>
+    	<attribute name="secondaryCategory" type="string" use="optional"></attribute>
+    </complexType>
+
+    <complexType name="rule">
+    	<attribute name="fileName" type="string" use="optional"></attribute>
+    	<attribute name="className" type="string" use="optional"></attribute>
+    	<attribute name="help" type="string" use="optional"></attribute>
+    	<attribute name="severity" type="string" use="optional"></attribute>
+    	<attribute name="devCost" type="float" use="optional"></attribute>
+    	<attribute name="instanceCost" type="float" use="optional"></attribute>
+    	<attribute name="complexity" use="optional">
+    		<simpleType>
+    			<restriction base="string">
+    				<enumeration value="simple"></enumeration>
+    				<enumeration value="moderate"></enumeration>
+    				<enumeration value="complex"></enumeration>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+</schema>
