@@ -8,5 +8,6 @@ ibm/compiled
 ibm/decompiled
 ibm/wamt/compiled
 ibm/wamt/decompiled
+ibm/logs
 temp
 *.html
