@@ -5,7 +5,7 @@ This example project of a web application that using java 8, but have desire mig
 IBM Migration Toolkit make scanning into all dependencies of war file and at the end presents a report. You can get report of the example project by running: 
 
 ```cli 
-./ibm-analyze.sh.
+. ./ibm-analyze.sh
 ```
 
 At the final processing of IBM Toolkit analysis results in HTML file that is name is same that analysed artifact with the suffix: *_AnalysisReport*. Therefore after running above script we have *java-migration-example.war_AnalysisReport.html* file. You can apply --output option to modify location and filename or even results to json format.
