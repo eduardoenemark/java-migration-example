@@ -1,6 +1,6 @@
 FROM docker.io/library/tomcat:8.5.100-jre8-temurin
 
-LABEL build=java-migration-example
+LABEL build=java-migration-example_tomcat_8.5.100-jre8-temurin
 ADD target/java-migration-example.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
