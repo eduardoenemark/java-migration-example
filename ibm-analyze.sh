@@ -8,6 +8,8 @@ podman run --tls-verify=false -it --rm -v .:/app docker.io/library/openjdk:21-jd
        --scanAll \
        --loadAllRules \
        --migrateAllConfig \
+       --detectSharedLibraries \
+       --includeSensitiveData \
        --sourceJava=oracle8 \
        --targetJava=java21 \
        --sourceAppServer=tomcat \
