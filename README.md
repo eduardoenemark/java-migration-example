@@ -2,7 +2,7 @@
 
 This example project of a web application that using java 8, but have desire migration to java 21.  To migration of web application are make using the [IBM Migration Toolkit for Application Binaries](https://www.ibm.com/docs/en/wamt?topic=migration-toolkit-application-binaries).
 
-IBM Migration Toolkit make scanning into all dependencies of war file and at the end presents a report. You can get report of the example project by running: 
+IBM Migration Toolkit make scanning into all dependencies of war file and at the end presents a full report. You can get report of the example project by running: 
 
 ```cli 
 . ./ibm-analyze.sh
