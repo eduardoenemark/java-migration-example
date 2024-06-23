@@ -8,11 +8,10 @@ IBM Migration Toolkit make scanning into all dependencies of war file and at the
 . ./ibm-analyze.sh
 ```
 
-At the final processing of IBM Toolkit analysis results in HTML file that is name is same that analysed artifact with the suffix: *_AnalysisReport*. Therefore after running above script we have *java-migration-example.war_AnalysisReport.html* file. You can apply --output option to modify location and filename or even results to json format.
+At the final processing of IBM Toolkit analysis results in HTML file of output name *ibm-analyze-report.html*. You can apply *--output* option to modify location and filename or even results to json format.
 
-You have mind this project is an example and you can locally make another tests using *ibm/wamt/binaryAppScanner.jar*.
+You have mind this project is an example and you can locally make another tests using *ibm/wamt/binaryAppScanner.jar*. Remember this another files in *ibm/wamt* also are importants.
 
 
-I'm reviewing and building another test examples. I'm appreciation by your suggestion. 
-X/Telegram: @eduardoenemark.
-
+I'm reviewing and building another test examples. I'm appreciation by your suggestion.
+X/Telegram: *@eduardoenemark*.
