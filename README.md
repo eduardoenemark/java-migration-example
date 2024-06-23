@@ -12,6 +12,11 @@ At the final processing of IBM Toolkit analysis results in HTML file of output n
 
 You have mind this project is an example and you can locally make another tests using *ibm/wamt/binaryAppScanner.jar*. Remember this another files in *ibm/wamt* also are importants.
 
+This toolkit not silver bullet, but detect very many case. I'm recommend you using also together Oracle JDK Migration Guide:
+
+- https://docs.oracle.com/en/java/javase/17/migrate/jdk-migration-guide.pdf
+- https://docs.oracle.com/en/java/javase/21/migrate/jdk-migration-guide.pdf
+
 
 I'm reviewing and building another test examples. I'm appreciation by your suggestion.
 X/Telegram: *@eduardoenemark*.
